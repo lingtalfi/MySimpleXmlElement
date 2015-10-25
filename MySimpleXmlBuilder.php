@@ -7,6 +7,11 @@ namespace MySimpleXmlElement;
  * ref1=http://www.w3.org/TR/xml/
  * ref2=http://www.w3.org/TR/xml/#NT-AttValue
  * 
+ * By default, all MySimpleXmlElements have a value of null.
+ * The trick that we use to create empty elements (self closing elements like <img /> for instance)
+ * is that we set the value to the empty string.
+ * 
+ * 
  */
 class MySimpleXmlBuilder
 {
@@ -61,7 +66,8 @@ class MySimpleXmlBuilder
         $s = '';
         $indent = str_repeat($this->indentChar, $level);
         $els = $x->getElements();
-        if ($els || (null !== ($v = $x->getValue()))) {
+        $v = $x->getValue();
+        if ($els || (null !== $v && '' !== $v)) {
             $s .= $indent . '<' . $x->getName() . $this->attrToString($x->getAttributes()) . '>';
             if ($els) {
                 $s .= $this->eol;
@@ -83,7 +89,7 @@ class MySimpleXmlBuilder
         }
         else {
             // empty element
-            $s .= '<' . $x->getName() . $this->attrToString($x->getAttributes()) . ' />';
+            $s .= $indent . '<' . $x->getName() . $this->attrToString($x->getAttributes()) . ' />';
         }
         return $s;
     }

@@ -96,7 +96,9 @@ Find more explanations on the [bigbang autoloader here](https://github.com/lingt
 
 
 
-### Geek Notes:
+### Geek Notes
+
+#### addElement, createChild and createChildReturn 
 
 addElement and createChild do basically the same thing, but createChild does actually a lot more.
 Not only createChild adds an element to its parent, but it also can set the element name, value and CDATA flag 
@@ -108,6 +110,28 @@ createChild returns the child, while createChildReturn returns the parent.
 Having those 3 methods at our fingertips gives us some appreciable flexibility when writing code.
 
 
+#### self closing element (empty element) vs start tag -- end tag
+
+To create a self closing element, make its value the empty string.
+
+
+
+
+
+History Log
+------------------
+    
+    
+    
+- v1.1.0 -- 2015-10-25
+
+    - An empty string value represents an empty element (self closing tag) 
+    - Fix self closing tag bug
+    
+    
+- v1.0.0 -- 2015-10-24
+
+    - initial commit
 
 
     
