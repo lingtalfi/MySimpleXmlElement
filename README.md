@@ -20,7 +20,7 @@ Install
 
 Using the [uni tool](https://github.com/lingtalfi/universe-naive-importer)
 ```bash
-uni import MySimpleXmlElement
+uni import Ling/MySimpleXmlElement
 ```
 
 
@@ -69,8 +69,8 @@ In this example, I'm emulating an imaginary rss feed manually with the MySimpleX
 ```php
 <?php
 
-use MySimpleXmlElement\MySimpleXmlBuilder;
-use MySimpleXmlElement\MySimpleXmlElement;
+use Ling\MySimpleXmlElement\MySimpleXmlBuilder;
+use Ling\MySimpleXmlElement\MySimpleXmlElement;
 
 
 

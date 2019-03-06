@@ -1,6 +1,6 @@
 <?php
 
-namespace MySimpleXmlElement;
+namespace Ling\MySimpleXmlElement;
 
 /*
  * LingTalfi 2015-10-24
